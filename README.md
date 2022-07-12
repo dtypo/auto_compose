@@ -15,5 +15,7 @@ If the directory `DIR` has been mounted (I deliberately decided to use the `/vol
 
 If the the two lists don't match, a `docker-compose up` is lauched.
 
-**NOTE**: the script is set to use the `container_name` field in the YML file, so every container without that field will "break" the scipt.
+## NOTE
+The script is set to use the `container_name` field in the YML file, so every container without that field will "break" the scipt.
+
 Moreover, the script will ignore all commented container (more precisely, will ignore every commented line that starts with one or more `#` followed by one ore more spaces).
