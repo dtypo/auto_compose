@@ -14,7 +14,7 @@ This prevent the user from using the automount feature, so the shared folders ne
 
 So the user must launche a `docker-compose up` in a CLI, and this could be quite tedious if you're not in the same LAN (VPN needed etc).
 
-This veeery small script is "projected" to solve this problem by running it every X minutes using the Task Scheduler of DSM (I set it to run every 5 minutes).
+This veeery small script is "designed" to solve this problem by running it every X minutes using the Task Scheduler of DSM (I set it to run every 5 minutes).
 
 If the directory `DIR` has been mounted (I deliberately decided to use `/volume1/homes`), the script compares the list of containers in the YML files with the list of running containers.
 
