@@ -1,17 +1,22 @@
 # auto_compose
 A small script to make the containers start automatically after manually mounting the shared volumes
 
-## Why should I use this script?
+## Preamble
+
 For security reasons, with Synology devices It'a best practice to set an external USB drive as Key Store Location.
 [HERE](https://blog.elcomsoft.com/2019/11/synology-nas-encryption-forensic-analysis-of-synology-nas-devices/) you can find more info about it.
 
 This prevent the user from using the automount feature, so the shared folders need to be mounted manually through the Key Manager.
 
-**After mounting**, the containers that make use of some encrypted shared folder don't start automatically.
+## Problem to be solved
 
-This script is projected to be used with the Task Scheduler of DSM and run every X minutes (I set it every 5 minutes).
+***After mounting***, the containers that make use of some encrypted shared folders don't start automatically (even if a `restart: always` flag is set in the YML file).
 
-If the directory `DIR` has been mounted (I deliberately decided to use the `/volume1/homes`), the script compares the list of containers in the YML files with the list of running containers.
+So the user must give a `docker-compose up` in a CLI, and this could be quite tedious if not in the same LAN (VPN needed etc).
+
+This veeery small script is "projected" to solve this problem by running it every X minutes using the Task Scheduler of DSM (I set it to run every 5 minutes).
+
+If the directory `DIR` has been mounted (I deliberately decided to use `/volume1/homes`), the script compares the list of containers in the YML files with the list of running containers.
 
 If the the two lists don't match, a `docker-compose up` is lauched.
 
