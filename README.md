@@ -12,7 +12,7 @@ This prevent the user from using the automount feature, so the shared folders ne
 
 ***After mounting***, the containers that make use of some encrypted shared folders don't start automatically (even if a `restart: always` flag is set in the YML file).
 
-So the user must give a `docker-compose up` in a CLI, and this could be quite tedious if not in the same LAN (VPN needed etc).
+So the user must launche a `docker-compose up` in a CLI, and this could be quite tedious if you're not in the same LAN (VPN needed etc).
 
 This veeery small script is "projected" to solve this problem by running it every X minutes using the Task Scheduler of DSM (I set it to run every 5 minutes).
 
