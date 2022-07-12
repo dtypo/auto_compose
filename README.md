@@ -16,13 +16,14 @@ So the user must launche a `docker-compose up` in a CLI, and this could be quite
 
 This veeery small script is "designed" to solve this problem by running it every X minutes using the Task Scheduler of DSM (I set it to run every 5 minutes).
 
-If the directory `DIR` has been mounted (I deliberately decided to use `/volume1/homes`), the script compares the list of containers in the YML file with the list of running containers.
+If the directory `TEST_DIR` has been mounted (I deliberately decided to use `/volume1/homes`), the script compares the list of containers in the YML file with the list of running containers.
 
 If the the two lists don't match, a `docker-compose up` is lauched.
 
-Obviously the user must edit the path of the YML file according to his own setup.
+Obviously the user must edit the path for `TEST_DIR` and `DOCKER_DIR` before using the script.
 
 ## NOTE
+
 The script is set to use the `container_name` field in the YML file, so every container without that field will "break" the scipt.
 
 Moreover, the script will ignore all commented container (more precisely, will ignore every commented line that starts with one or more `#` followed by one ore more spaces).
