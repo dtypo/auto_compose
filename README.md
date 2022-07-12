@@ -1,5 +1,5 @@
 # auto_compose
-A small script to make the containers start automatically after manually mounting the shared volumes
+A small script to make the containers start automatically after manually mounting the shared volumes.
 
 ## Preamble
 
