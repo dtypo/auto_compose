@@ -26,4 +26,4 @@ Obviously the user must edit the path for `TEST_DIR` and `DOCKER_DIR` before usi
 
 The script is set to use the `container_name` field in the YML file, so every container without that field will "break" the scipt.
 
-Moreover, the script will ignore all commented container (more precisely, will ignore every commented line that starts with one or more `#` followed by one ore more spaces).
+Moreover, the script will ignore all commented containers (more precisely, it will ignore every commented line of the YML that starts with one or more `#` **followed by one ore more spaces**).
